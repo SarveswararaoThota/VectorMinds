@@ -1,0 +1,471 @@
+/* ─── Page ──────────────────────────────────────────────── */
+.ms-page { padding-bottom: 40px; }
+
+/* ─── Top bar ───────────────────────────────────────────── */
+.ms-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ─── Tab bar ───────────────────────────────────────────── */
+.ms-tabbar {
+  display: flex;
+  gap: 4px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 5px;
+  box-shadow: var(--shadow);
+}
+.ms-tab {
+  display: flex; align-items: center; gap: 6px;
+  padding: 0 18px; height: 36px;
+  border: none; border-radius: 8px;
+  background: transparent;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.86rem; font-weight: 600;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+.ms-tab:hover:not(.ms-tab-disabled):not(.ms-tab-active) {
+  background: var(--blue-pale); color: var(--blue);
+}
+.ms-tab-active {
+  background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+  color: #fff !important;
+  box-shadow: 0 3px 12px rgba(21,101,192,0.26);
+}
+.ms-tab-disabled { opacity: 0.38; cursor: not-allowed; }
+
+/* ─── Body ──────────────────────────────────────────────── */
+.ms-body { display: flex; flex-direction: column; gap: 12px; }
+
+/* ─── Accordion ─────────────────────────────────────────── */
+.ms-accordion {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.ms-section-header {
+  width: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 24px;
+  background: none; border: none;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  transition: background 0.15s;
+}
+.ms-section-header:hover { background: var(--blue-pale); }
+.ms-section-open { background: var(--blue-pale) !important; }
+
+.ms-section-left { display: flex; align-items: center; gap: 12px; }
+
+.ms-section-dot {
+  width: 22px; height: 22px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.2s;
+}
+.ms-dot-done  { background: var(--blue); color: #fff; }
+.ms-dot-empty { background: var(--border); }
+
+.ms-section-label {
+  font-size: 1rem; font-weight: 700; color: var(--text-dark);
+}
+
+.ms-chevron { color: var(--text-light); transition: transform 0.25s; }
+.ms-chevron-open { transform: rotate(180deg); }
+
+/* ─── Section body ──────────────────────────────────────── */
+.ms-section-body {
+  padding: 20px 24px 24px;
+  border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 16px;
+  animation: sectionOpen 0.22s ease both;
+}
+@keyframes sectionOpen {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Grid ──────────────────────────────────────────────── */
+.ms-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ─── Field ─────────────────────────────────────────────── */
+.ms-field { display: flex; flex-direction: column; gap: 5px; }
+.ms-label {
+  font-size: 0.77rem; font-weight: 600;
+  color: var(--text-mid); letter-spacing: 0.3px;
+  text-align: right;
+  padding-right: 4px;
+}
+.ms-input { height: 38px !important; font-size: 0.86rem !important; }
+.ms-readonly {
+  background: var(--blue-pale) !important;
+  color: var(--text-mid) !important;
+  cursor: default !important;
+  border-color: var(--border) !important;
+}
+
+/* DOA display */
+.ms-doa {
+  height: 38px;
+  display: flex; align-items: center;
+  font-weight: 700; font-size: 0.95rem;
+  color: var(--text-dark);
+  padding: 0 14px;
+}
+
+/* ─── PIN fetch ──────────────────────────────────────────── */
+.ms-pin-wrap {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  position: relative;
+}
+.ms-pin-wrap .form-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.ms-pin-fetch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 12px;
+  height: 38px;
+  background: var(--blue, #1976d2);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.18s, opacity 0.18s;
+  flex-shrink: 0;
+}
+.ms-pin-fetch-btn:hover:not(:disabled) {
+  background: var(--blue-dark, #1565c0);
+}
+.ms-pin-fetch-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.ms-pin-fetch-btn .ms-pin-spinner {
+  width: 13px; height: 13px;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: ms-spin 0.7s linear infinite;
+}
+
+@keyframes ms-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Post office dropdown */
+.ms-po-dropdown-wrap {
+  margin-top: 8px;
+  padding: 10px 12px;
+  background: #e8f4fd;
+  border: 1px solid #90caf9;
+  border-radius: 7px;
+}
+.ms-po-dropdown-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #1565c0;
+  margin-bottom: 6px;
+}
+.ms-po-select {
+  width: 100%;
+  border-color: #90caf9 !important;
+  background: #fff !important;
+  font-size: 13px;
+}
+
+/* ─── Same-as-permanent checkbox ────────────────────────── */
+.ms-checkbox-row {
+  display: flex; align-items: center; gap: 10px;
+  cursor: pointer; width: fit-content;
+  padding: 6px 0;
+}
+.ms-checkbox {
+  width: 16px; height: 16px;
+  accent-color: var(--blue);
+  cursor: pointer;
+}
+.ms-checkbox-label {
+  font-size: 0.85rem; font-weight: 600;
+  color: var(--text-mid);
+}
+
+/* ─── Nominee card ──────────────────────────────────────── */
+.ms-nominee-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px 18px;
+  display: flex; flex-direction: column; gap: 14px;
+  background: var(--blue-pale);
+  position: relative;
+  animation: sectionOpen 0.2s ease both;
+}
+.ms-nominee-card-header {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.ms-nominee-card-title {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 0.88rem; font-weight: 700; color: var(--text-dark);
+}
+.ms-nominee-remove {
+  display: flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 1px solid #fca5a5; background: #fef2f2;
+  color: #ef4444; cursor: pointer;
+  transition: background 0.15s;
+}
+.ms-nominee-remove:hover { background: #fee2e2; }
+
+/* Percentage progress bar */
+.ms-nominee-total-bar {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 14px;
+  background: var(--blue-pale);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.ms-nominee-total-label {
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--text-mid); white-space: nowrap;
+}
+.ms-nominee-progress-wrap {
+  flex: 1; height: 6px;
+  background: var(--border);
+  border-radius: 99px; overflow: hidden;
+}
+.ms-nominee-progress-fill {
+  height: 100%; border-radius: 99px;
+  transition: width 0.35s ease, background 0.35s;
+}
+.ms-nominee-total-pct {
+  font-size: 0.86rem; font-weight: 700;
+  color: var(--text-dark); min-width: 42px; text-align: right;
+}
+.ms-pct-over { color: #ef4444 !important; }
+.ms-pct-done { color: #16a34a !important; }
+
+/* Add nominee button */
+.ms-add-nominee-btn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 9px 18px; border-radius: 8px;
+  border: 1.5px dashed var(--blue);
+  background: var(--blue-pale); color: var(--blue);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.86rem; font-weight: 600;
+  cursor: pointer; width: fit-content;
+  transition: background 0.15s;
+}
+.ms-add-nominee-btn:hover { background: #dbeafe; }
+.ms-nominee-max-note {
+  font-size: 0.8rem; color: var(--text-light);
+  font-style: italic;
+}
+
+/* ─── Attachments grid ──────────────────────────────────── */
+.ms-attachments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.ms-attach-box {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.ms-attach-header {
+  display: flex; align-items: center; gap: 7px;
+  flex-wrap: wrap;
+}
+.ms-attach-label {
+  font-size: 0.82rem; font-weight: 700;
+  color: var(--text-dark);
+}
+.ms-attach-hint {
+  font-size: 0.72rem; color: var(--text-light);
+  font-style: italic;
+}
+.ms-attach-upload {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 6px; height: 110px;
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.ms-attach-upload:hover:not(.ms-readonly) {
+  border-color: var(--blue); background: var(--blue-pale);
+}
+.ms-attach-upload.ms-readonly { cursor: default; }
+.ms-attach-upload-text { font-size: 0.8rem; font-weight: 600; color: var(--text-mid); }
+.ms-attach-upload-sub  { font-size: 0.72rem; color: var(--text-light); }
+
+.ms-attach-preview-wrap {
+  position: relative; height: 110px;
+  border-radius: 10px; overflow: hidden;
+  border: 1px solid var(--border);
+}
+.ms-attach-img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.ms-attach-pdf-preview {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 6px; height: 100%; background: #f8fafc;
+  color: var(--text-mid);
+}
+.ms-attach-filename {
+  font-size: 0.72rem; font-weight: 600;
+  color: var(--text-mid);
+  max-width: 90%; overflow: hidden;
+  text-overflow: ellipsis; white-space: nowrap;
+}
+.ms-attach-remove {
+  position: absolute; top: 6px; right: 6px;
+  width: 22px; height: 22px; border-radius: 50%;
+  border: none; background: rgba(0,0,0,0.55);
+  color: #fff; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background 0.15s;
+}
+.ms-attach-remove:hover { background: #ef4444; }
+
+/* Uploading indicator */
+.ms-attach-uploading {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--blue, #1976d2);
+}
+.ms-attach-spinner {
+  display: inline-block;
+  width: 11px; height: 11px;
+  border: 2px solid rgba(25,118,210,0.25);
+  border-top-color: var(--blue, #1976d2);
+  border-radius: 50%;
+  animation: ms-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+.ms-attach-uploading-border {
+  border-color: var(--blue, #1976d2) !important;
+  background: var(--blue-pale, #e3f2fd) !important;
+  pointer-events: none;
+  cursor: default !important;
+}
+.ms-photo-uploading {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--blue, #1976d2);
+  font-style: italic;
+}
+
+/* ─── Address Proof group ───────────────────────────────── */
+.ms-address-proof-group {
+  display: flex; flex-direction: column; gap: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  background: #fafbff;
+}
+.ms-address-proof-title {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.88rem; font-weight: 700;
+  color: var(--text-dark);
+}
+.ms-address-proof-sub {
+  margin-left: 4px;
+  font-size: 0.74rem; font-weight: 500;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* ─── More Address Proof toggle ─────────────────────────── */
+.ms-more-proof-btn {
+  display: flex; align-items: center; gap: 8px;
+  align-self: flex-start;
+  padding: 0 16px; height: 36px;
+  border: 1.5px dashed var(--blue);
+  border-radius: 8px;
+  background: var(--blue-pale); color: var(--blue);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.83rem; font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-style 0.15s;
+}
+.ms-more-proof-btn:hover { background: #dbeafe; border-style: solid; }
+.ms-more-proof-chevron { margin-left: auto; transition: transform 0.25s; }
+.ms-more-proof-chevron-open { transform: rotate(180deg); }
+.ms-more-proof-row { animation: sectionOpen 0.22s ease both; }
+
+/* ─── Photo / Signature row ─────────────────────────────── */
+.ms-photo-row {
+  display: flex; gap: 24px;
+  padding: 20px 0 8px;
+}
+.ms-upload-box { display: flex; flex-direction: column; gap: 8px; }
+.ms-upload-label {
+  font-size: 0.82rem; font-weight: 600;
+  color: var(--text-mid);
+}
+.ms-upload-area {
+  width: 100px; height: 100px;
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  background: var(--white);
+  transition: border-color 0.2s, background 0.2s;
+}
+.ms-upload-area:hover:not(.ms-readonly) {
+  border-color: var(--blue);
+  background: var(--blue-pale);
+}
+.ms-upload-area.ms-readonly { cursor: default; }
+.ms-upload-placeholder { color: var(--text-light); }
+.ms-preview-img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ─── Footer ────────────────────────────────────────────── */
+.ms-footer {
+  display: flex; justify-content: flex-end; align-items: center;
+  gap: 10px; flex-wrap: wrap;
+  padding: 20px 0 0;
+}
+
+/* ─── Responsive ────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .ms-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .ms-topbar  { flex-direction: column; align-items: flex-start; }
+  .ms-attachments-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .ms-grid-3 { grid-template-columns: 1fr; }
+  .ms-section-body { padding: 16px; }
+  .ms-attachments-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+
+.ca-root {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: #f0f2f5;
+  min-height: 100vh;
+  padding: 24px;
+  color: #1a2332;
+}
+
+/* Top Bar */
+.ca-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ca-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ca-back-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #c8d3e0;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.ca-back-btn:hover {
+  background: #edf3fb;
+  border-color: #1557a0;
+}
+
+.ca-page-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a2332;
+  border-bottom: 3px solid #1557a0;
+  padding-bottom: 4px;
+}
+
+/* Tab Bar */
+.ca-tabbar {
+  display: flex;
+  gap: 4px;
+  background: #fff;
+  border: 1px solid #dce3ed;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.ca-tab {
+  padding: 6px 20px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.ca-tab:hover:not(:disabled) {
+  background: #edf3fb;
+  color: #1557a0;
+}
+
+.ca-tab-active {
+  background: #1557a0;
+  color: #fff;
+}
+
+.ca-tab:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Cards */
+.ca-card {
+  background: #fff;
+  border: 1px solid #dce3ed;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.ca-card-header {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a2332;
+  background: #f7f9fc;
+  border-bottom: 1px solid #dce3ed;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ca-card-body {
+  padding: 20px 24px;
+}
+
+/* Form Layouts */
+.ca-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.ca-form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 24px;
+}
+
+.ca-form-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 24px;
+}
+
+.ca-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ca-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a5568;
+  letter-spacing: 0.3px;
+}
+
+.ca-label.required::before {
+  content: '* ';
+  color: #dc2626;
+}
+
+.ca-input,
+.ca-select {
+  height: 36px;
+  border: 1px solid #c8d3e0;
+  border-radius: 6px;
+  padding: 0 12px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #1a2332;
+  background: #fff;
+  outline: none;
+  transition: all 0.15s;
+}
+
+.ca-input:focus,
+.ca-select:focus {
+  border-color: #1557a0;
+  box-shadow: 0 0 0 3px rgba(21, 87, 160, 0.1);
+}
+
+.ca-input:read-only,
+.ca-select:disabled {
+  background: #f7f9fc;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.ca-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%234a5568' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+/* Table */
+.ca-table-responsive {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.ca-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.ca-table th {
+  background: #f7f9fc;
+  color: #4a5568;
+  font-weight: 600;
+  padding: 10px 12px;
+  border: 1px solid #dce3ed;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.ca-table td {
+  padding: 8px 12px;
+  border: 1px solid #dce3ed;
+  color: #1a2332;
+}
+
+.ca-table tr:nth-child(even) td {
+  background: #fafbfc;
+}
+
+/* Buttons */
+.ca-btn {
+  height: 36px;
+  padding: 0 20px;
+  border-radius: 6px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ca-btn-primary {
+  background: #1557a0;
+  color: #fff;
+}
+
+.ca-btn-primary:hover:not(:disabled) {
+  background: #104585;
+}
+
+.ca-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ca-btn-saved {
+  background: #16a34a !important;
+}
+
+.ca-btn-secondary {
+  background: #fff;
+  color: #1557a0;
+  border: 1px solid #1557a0;
+}
+
+.ca-btn-secondary:hover {
+  background: #edf3fb;
+}
+
+.ca-btn-outline {
+  background: #fff;
+  color: #4a5568;
+  border: 1px solid #c8d3e0;
+}
+
+.ca-btn-outline:hover {
+  background: #f7f9fc;
+}
+
+.ca-remove-btn {
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.ca-remove-btn:hover {
+  background: #b91c1c;
+}
+
+/* No Data */
+.ca-no-data {
+  text-align: center;
+  color: #9aaab8;
+  font-style: italic;
+  padding: 20px;
+  font-size: 13px;
+}
+
+/* Footer */
+.ca-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 12px;
+}
+
+/* Modal */
+.ca-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.ca-modal-box {
+  background: #fff;
+  border-radius: 12px;
+  width: 700px;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+.ca-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: #1557a0;
+  color: #fff;
+}
+
+.ca-modal-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ca-modal-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.ca-modal-body {
+  padding: 20px;
+}
+
+.ca-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ca-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ca-modal-footer {
+  display: flex;
+  gap: 10px;
+  padding: 16px 20px;
+  border-top: 1px solid #dce3ed;
+  justify-content: flex-end;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ca-form-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .ca-root {
+    padding: 16px;
+  }
+  
+  .ca-form-grid-2,
+  .ca-form-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .ca-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

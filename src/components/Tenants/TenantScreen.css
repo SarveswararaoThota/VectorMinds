@@ -1,0 +1,56 @@
+/* ─── Mode Tab Bar ──────────────────────────────────────── */
+.ts-tabbar {
+  display: flex;
+  gap: 4px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 6px;
+  margin-bottom: 24px;
+  width: fit-content;
+  box-shadow: var(--shadow);
+}
+
+.ts-tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 20px;
+  height: 38px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.ts-tab:hover:not(.ts-tab-disabled):not(.ts-tab-active) {
+  background: var(--blue-pale);
+  color: var(--blue);
+}
+
+.ts-tab-active {
+  background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+  color: #fff !important;
+  box-shadow: 0 4px 14px rgba(21, 101, 192, 0.28);
+}
+
+.ts-tab-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.ts-tab-icon {
+  display: flex;
+  align-items: center;
+}
+
+.ts-tab-indicator {
+  display: none; /* kept for potential underline variant */
+}

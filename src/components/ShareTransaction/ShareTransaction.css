@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+
+.st-root {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: #f0f2f5;
+  min-height: 100vh;
+  padding: 24px;
+  color: #1a2332;
+}
+
+/* Top Bar */
+.st-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.st-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.st-back-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #c8d3e0;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.st-back-btn:hover {
+  background: #edf3fb;
+  border-color: #1557a0;
+}
+
+.st-page-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a2332;
+  border-bottom: 3px solid #1557a0;
+  padding-bottom: 4px;
+}
+
+/* Tab Bar */
+.st-tabbar {
+  display: flex;
+  gap: 4px;
+  background: #fff;
+  border: 1px solid #dce3ed;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.st-tab {
+  padding: 6px 20px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.st-tab:hover:not(:disabled) {
+  background: #edf3fb;
+  color: #1557a0;
+}
+
+.st-tab-active {
+  background: #1557a0;
+  color: #fff;
+}
+
+.st-tab:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Cards */
+.st-card {
+  background: #fff;
+  border: 1px solid #dce3ed;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.st-card-header {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a2332;
+  background: #f7f9fc;
+  border-bottom: 1px solid #dce3ed;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.st-card-body {
+  padding: 20px 24px;
+}
+
+/* Form Layouts */
+.st-form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 24px;
+}
+
+.st-form-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 24px;
+}
+
+.st-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.st-full-width {
+  grid-column: span 3;
+}
+
+.st-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a5568;
+  letter-spacing: 0.3px;
+}
+
+.st-label.required::before {
+  content: '* ';
+  color: #dc2626;
+}
+
+.st-input,
+.st-select,
+.st-textarea {
+  border: 1px solid #c8d3e0;
+  border-radius: 6px;
+  padding: 0 12px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #1a2332;
+  background: #fff;
+  outline: none;
+  transition: all 0.15s;
+}
+
+.st-input,
+.st-select {
+  height: 36px;
+}
+
+.st-textarea {
+  padding: 8px 12px;
+  resize: vertical;
+}
+
+.st-input:focus,
+.st-select:focus,
+.st-textarea:focus {
+  border-color: #1557a0;
+  box-shadow: 0 0 0 3px rgba(21, 87, 160, 0.1);
+}
+
+.st-input:read-only,
+.st-select:disabled {
+  background: #f7f9fc;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.st-input:disabled {
+  background: #f7f9fc;
+  color: #6b7280;
+}
+
+.st-amount {
+  background: #f0fdf4 !important;
+  font-weight: 700;
+  color: #16a34a !important;
+}
+
+.st-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%234a5568' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+/* Table */
+.st-table-responsive {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.st-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.st-table th {
+  background: #f7f9fc;
+  color: #4a5568;
+  font-weight: 600;
+  padding: 10px 12px;
+  border: 1px solid #dce3ed;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.st-table td {
+  padding: 8px 12px;
+  border: 1px solid #dce3ed;
+  color: #1a2332;
+}
+
+.st-table tr:nth-child(even) td {
+  background: #fafbfc;
+}
+
+.st-status-completed {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #16a34a;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* No Data */
+.st-no-data {
+  text-align: center;
+  color: #9aaab8;
+  font-style: italic;
+  padding: 20px;
+  font-size: 13px;
+}
+
+/* Print Section */
+.st-print-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #dce3ed;
+}
+
+.st-print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: #1557a0;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.st-print-btn:hover {
+  background: #104585;
+}
+
+/* Buttons */
+.st-btn {
+  height: 38px;
+  padding: 0 24px;
+  border-radius: 6px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.st-btn-primary {
+  background: #1557a0;
+  color: #fff;
+}
+
+.st-btn-primary:hover:not(:disabled) {
+  background: #104585;
+}
+
+.st-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.st-btn-saved {
+  background: #16a34a !important;
+}
+
+.st-btn-secondary {
+  background: #fff;
+  color: #1557a0;
+  border: 1px solid #1557a0;
+}
+
+.st-btn-secondary:hover {
+  background: #edf3fb;
+}
+
+.st-btn-outline {
+  background: #fff;
+  color: #4a5568;
+  border: 1px solid #c8d3e0;
+}
+
+.st-btn-outline:hover {
+  background: #f7f9fc;
+}
+
+/* Footer */
+.st-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 12px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .st-form-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .st-full-width {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .st-root {
+    padding: 16px;
+  }
+  
+  .st-form-grid-2,
+  .st-form-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .st-full-width {
+    grid-column: span 1;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .st-topbar,
+  .st-tabbar,
+  .st-footer,
+  .st-back-btn,
+  .st-print-btn {
+    display: none !important;
+  }
+  
+  .st-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  .st-root {
+    padding: 0;
+    background: #fff;
+  }
+}

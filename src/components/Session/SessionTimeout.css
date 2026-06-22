@@ -1,0 +1,101 @@
+/* Overlay */
+.st-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: stFadeIn 0.2s ease;
+}
+
+@keyframes stFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Modal box */
+.st-modal {
+  background: #fff;
+  border-radius: 6px;
+  width: 380px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  position: relative;
+  animation: stSlideIn 0.22s ease;
+  overflow: hidden;
+}
+
+@keyframes stSlideIn {
+  from { transform: translateY(-16px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+/* Close button */
+.st-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.st-close:hover { background: #f0f0f0; }
+
+/* Body */
+.st-body {
+  padding: 40px 28px 28px;
+}
+.st-message {
+  font-size: 1rem;
+  color: #222;
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Footer */
+.st-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.st-cancel {
+  padding: 8px 20px;
+  border: none;
+  background: transparent;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.st-cancel:hover { background: #e5e7eb; }
+
+.st-signin {
+  padding: 8px 22px;
+  border: none;
+  background: #1565c0;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.st-signin:hover { background: #0d47a1; }
